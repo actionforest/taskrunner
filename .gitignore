@@ -1,0 +1,17 @@
+node_modules/
+.nyc_output/
+coverage/
+.idea/
+*.off/
+*.sql
+*.sqlite
+*.log
+.DS_Store
+.npmrc
+/Plugins/
+index.js
+index.js.map
+index.d.ts
+package-lock.json
+.yalc/
+yalc.lock

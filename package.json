@@ -1,0 +1,45 @@
+{
+  "name": "@actionforest/taskrunner",
+  "version": "0.0.0",
+  "description": "ActionForest taskrunner in Pomegranate",
+  "main": "index.js",
+  "files": [
+    "index.d.ts",
+    "index.js.map",
+    "Plugins/**/*",
+    "Readme.md",
+    "LICENCE"
+  ],
+  "scripts": {
+    "prepublishOnly": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/actionforest/taskrunner.git"
+  },
+  "keywords": [
+    "ActionForest",
+    "tasks",
+    "RMQ",
+    "Pomegranate",
+    "Plugin"
+  ],
+  "author": "Jim Bulkowski <jim.b@paperelectron.com> (http://paperelectron.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/actionforest/taskrunner/issues"
+  },
+  "homepage": "https://github.com/actionforest/taskrunner#readme",
+  "dependencies": {
+    "@pomegranate/plugin-tools": "^2.0.7",
+    "actiontrees": "^0.0.8",
+    "bluebird": "^3.5.5",
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.134",
+    "@types/node": "^12.0.7",
+    "typescript": "^3.5.1"
+  }
+}
