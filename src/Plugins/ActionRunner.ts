@@ -32,7 +32,6 @@ export const ActionRunner = CreatePlugin('action')
     load: async (PluginLateError,PluginStore, PluginVariables, PluginLogger, RabbitMQ, ActionTree, DispatchAction) => {
       let taskHooks = {
         requeue: (stats, requeueData) => {
-          console.log(requeueData, '*******************************************************')
           PluginLogger.log(`${stats.name}: ${stats.uuid} will requeue.`)
           return DispatchAction.to(PluginVariables.actionQueue).write(requeueData)
         },
