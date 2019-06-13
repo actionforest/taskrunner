@@ -65,7 +65,6 @@ export const ActionRunner = CreatePlugin('action')
               replyTo: replyTo
             }
           }
-          PluginLogger.log(parsedMsg)
           if(parsedMsg.metadata){
             return ActionTree.runTask(parsedMsg)
               .then((res) => {
