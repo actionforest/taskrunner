@@ -33,7 +33,7 @@
   "homepage": "https://github.com/actionforest/taskrunner#readme",
   "dependencies": {
     "@pomegranate/plugin-tools": "^2.0.7",
-    "actiontrees": "^0.0.8",
+    "actiontrees": "^0.0.9",
     "bluebird": "^3.5.5",
     "lodash": "^4.17.11"
   },

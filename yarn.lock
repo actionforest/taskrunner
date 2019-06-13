@@ -36,10 +36,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.0.7.tgz#4f2563bad652b2acb1722d7e7aae2b0ff62d192c"
   integrity sha512-1YKeT4JitGgE4SOzyB9eMwO0nGVNkNEsm9qlIt1Lqm/tG2QEiSMTD4kS3aO6L+w5SClLVxALmIBESK6Mk5wX0A==
 
-actiontrees@^0.0.8:
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/actiontrees/-/actiontrees-0.0.8.tgz#f109b2f8cac36394e4c9ef2173398dcf6be53f69"
-  integrity sha512-r7tB6IrAiwVgpYlotE2nnW+9qRc+P22CbDabUPeM/avvPLHBWpalqxcXM3rKYJ43DzqDCUm6EvgECRtENgVfcg==
+actiontrees@^0.0.9:
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/actiontrees/-/actiontrees-0.0.9.tgz#114a60cd44bf2c14261ecc2d8049bd46782b3295"
+  integrity sha512-3PLTL3c+OF7VSPSS7e/H0IvtlSk0RmqDSCqutLQbJLIVkAUkRJKFj8MeSgjaQ5iImDKOw0hTKv61EhBoJVGNhg==
   dependencies:
     bluebird "^3.5.5"
     fs-extra "^8.0.1"

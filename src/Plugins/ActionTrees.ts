@@ -75,7 +75,7 @@ export const ActionTrees = CreatePlugin('anything')
   .directories(['actions', 'abstract'])
   .hooks({
     load: async (Injector, PluginVariables, PluginFiles, PluginLogger, Knex, SQL, RabbitMQ) => {
-      let storage = new PGStore(Knex)
+      let storage = new PGStore(Knex, PluginVariables.tablePrefix)
 
       let Trees = new ActionTree(storage, {
         debugLogging: PluginVariables.debugLogging,
