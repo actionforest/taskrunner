@@ -24,8 +24,6 @@ export const ActionRunner = CreatePlugin('action')
   })
 
   .variables({
-    infoLogging: false,
-    debugLogging: false,
     actionQueue: 'actionForest'
   })
   .hooks({
