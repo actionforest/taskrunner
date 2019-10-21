@@ -21,7 +21,7 @@ export const Action = (PluginLogger): Task => {
       name: '{{name}}',
       initial: '{{transition}}',
       // Internal default values below.
-      //retryOnError: true,
+      //retryOnError: false,
       //retryDelay: 1000,
       //delayMultiplier: 1.5,
       //retryLimit: 1,

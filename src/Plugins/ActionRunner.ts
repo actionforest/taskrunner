@@ -14,7 +14,11 @@
 
 import Bluebird from 'bluebird'
 import {CreatePlugin} from "@pomegranate/plugin-tools";
-import {isNull} from 'lodash/fp'
+import {isNull, isString, has, get} from 'lodash/fp'
+
+let hasCorrelation = (stats) => {
+  return has('callerMetadata.replyTo', stats) && has('callerMetadata.correlationId', stats)
+}
 
 
 export const ActionRunner = CreatePlugin('action')
@@ -27,17 +31,39 @@ export const ActionRunner = CreatePlugin('action')
     actionQueue: 'actionForest'
   })
   .hooks({
-    load: async (PluginLateError,PluginStore, PluginVariables, PluginLogger, RabbitMQ, ActionTree, DispatchAction) => {
+    load: async (PluginLateError,PluginStore, PluginVariables, PluginLogger, RabbitMQ, ActionTree, DispatchAction, ActionReply) => {
       let taskHooks = {
         requeue: (stats, requeueData) => {
           PluginLogger.log(`${stats.name}: ${stats.uuid} will requeue.`)
           return DispatchAction.to(PluginVariables.actionQueue).write(requeueData)
         },
-        success: (stats, requeueData) => {
+        success: async (stats, requeueData) => {
+          if(hasCorrelation(stats)){
+            try {
+              await ActionReply({
+                rpc_auto_success: stats.state
+              }, stats.callerMetadata)
+            }
+            catch(e){
+              PluginLogger.error(e)
+            }
+          }
+
           PluginLogger.log(`${stats.name}: ${stats.uuid} complete`)
 
         },
-        failure: (stats, requeueData) => {
+        failure: async (stats, requeueData) => {
+          if(hasCorrelation(stats)){
+            try {
+              await ActionReply({
+                rpc_auto_failure: {message: stats.transitionError.message, stack: stats.transitionError.stack}
+              }, stats.callerMetadata)
+            }
+            catch(e){
+              PluginLogger.error(e)
+            }
+          }
+          PluginLogger.error('error', stats.callerMetadata)
           PluginLogger.error(`${stats.name}: ${stats.uuid} permanently failed.`)
         }
       }
@@ -66,7 +92,7 @@ export const ActionRunner = CreatePlugin('action')
             }
           }
           if(parsedMsg.metadata){
-            return ActionTree.runTask(parsedMsg)
+            return ActionTree.runTask(parsedMsg, parsedMsg.RPCmetadata)
               .then((res) => {
                 this.ack(msg)
               })
