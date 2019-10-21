@@ -2,6 +2,16 @@
 # yarn lockfile v1
 
 
+"@actionforest/dispatch@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@actionforest/dispatch/-/dispatch-0.1.0.tgz#f30348e53e4fe201d6426f4c79e6b06bc0eb1922"
+  integrity sha512-ORwRq9/PUDPV4Yi5fzoAgQDix1KiX/2mhdwwgbSYmk/4s48mEzUmWwbf9vzW8xwjxbXhVPG2Zj5iZ+K9uxGk7g==
+  dependencies:
+    "@pomegranate/plugin-tools" "^2.0.7"
+    bluebird "^3.5.5"
+    lodash "^4.17.15"
+    uuid "^3.3.2"
+
 "@babel/polyfill@^7.4.4":
   version "7.4.4"
   resolved "https://registry.yarnpkg.com/@babel/polyfill/-/polyfill-7.4.4.tgz#78801cf3dbe657844eeabf31c1cae3828051e893"
@@ -36,15 +46,15 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.0.7.tgz#4f2563bad652b2acb1722d7e7aae2b0ff62d192c"
   integrity sha512-1YKeT4JitGgE4SOzyB9eMwO0nGVNkNEsm9qlIt1Lqm/tG2QEiSMTD4kS3aO6L+w5SClLVxALmIBESK6Mk5wX0A==
 
-actiontrees@^0.0.10:
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/actiontrees/-/actiontrees-0.0.10.tgz#566046728be5891d86738ca0106b974b75b03fc8"
-  integrity sha512-ttsKu9G+zq90l2m5RIgxbSAKA+TaVLQOCLGhG/Z28o+jtXKNt+jNkvb8gbwwXrsloI1V+QqP/gfILZTsjLk+Qw==
+actiontrees@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/actiontrees/-/actiontrees-0.1.0.tgz#02a74ad6315db88a0985d48a59b67036794fc770"
+  integrity sha512-E8rxli8ssV/2o0c2kMpuEYJVxm/3vvjq5zkhEwFNthvYmnFTk93OTAwkNNDMcH48nrfM/E9pkpDFYudGfqH6dg==
   dependencies:
     bluebird "^3.5.5"
     fs-extra "^8.0.1"
     knex "^0.17.3"
-    lodash "^4.17.11"
+    lodash "^4.17.15"
     moment "^2.24.0"
     object-hash "^1.3.1"
     uuid "^3.3.2"
@@ -660,6 +670,11 @@ lodash@^4.17.11:
   version "4.17.11"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
   integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
+
+lodash@^4.17.15:
+  version "4.17.15"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
+  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
 
 make-iterator@^1.0.0:
   version "1.0.1"
